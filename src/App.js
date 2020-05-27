@@ -1,6 +1,10 @@
 import React from 'react';
 
+
+//components
 import Layout from './components/Layout';
+
+import './styles/tailwind.generated.css';
 
 
 
@@ -25,7 +29,7 @@ function App() {
     <div className="App">
 
       <Layout>
-        hej
+        <p className="">Hej</p>
       </Layout>
 
     </div >

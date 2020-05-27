@@ -3,6 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [data, setData] = React.useState(null)
+
+  React.useEffect(() => {
+    const fetchDataFromAPI = async () => {
+      const response = await fetch('http://localhost:9000/testAPI/');
+      const body = await response.json();
+
+      console.log(body)
+      setData(body);
+    }
+
+    fetchDataFromAPI()
+  }, []);
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,16 +25,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
-    </div>
+    </div >
   );
 }
 

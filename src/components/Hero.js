@@ -19,7 +19,7 @@ const Hero = () => {
 
     useEffect(() => {
         const fetchDataFromAPI = async () => {
-            const response = await fetch('http://localhost:3001/mockup/');
+            const response = await fetch('http://localhost:4000/api/');
             const body = await response.json();
             setData(body);
             setIsLoading(false)
@@ -50,7 +50,7 @@ const Hero = () => {
         console.log('submitting...')
         event.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/mockup/', {
+            const response = await fetch('http://localhost:4000/api/', {
                 method: 'POST',
                 body: JSON.stringify({ url: url, device: mockupType }),
                 headers: { 'Content-type': 'application/json' }

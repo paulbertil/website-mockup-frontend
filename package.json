@@ -42,5 +42,5 @@
     "autoprefixer": "^9.8.0",
     "postcss-cli": "^7.1.1"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:4000"
 }

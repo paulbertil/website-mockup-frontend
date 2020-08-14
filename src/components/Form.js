@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import LoadingIcon from '../components/loadingIcon';
+
+import FormStyles from './Form.module.scss'
+
+import Button from './Button'
 
 
 const Form = (props) => {
@@ -18,30 +22,28 @@ const Form = (props) => {
 
     return (
         <form
+            className={FormStyles.form}
             onSubmit={(e) => onSubmitForm(e)}
         >
-            <div className="flex flex-col items-center">
-                <input
-                    type="text"
-                    name="url"
-                    className="rounded w-2/4 h-10 bg-gray-300  mb-5 pl-3 "
-                    onChange={(e) => handleInputChange(e.target.value)}
-                    value={url}
-                    placeholder="type any url here"
-                />
-            </div>
-            <div className="flex justify-center">
-                {!isFormSubmitted && (
-                    <button
-                        className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded-full text-lg">
+            {!isFormSubmitted && (
+                <div className={FormStyles.formGrid}>
+                    <input
+                        type="text"
+                        name="url"
+                        onChange={(e) => handleInputChange(e.target.value)}
+                        value={url}
+                        placeholder="type any url here"
+                        className={FormStyles.formInput}
+                    />
+                    <Button>
                         Create mockup
-                    </button>
-                )}
-                {isFormSubmitted && (
-                    // loading icon
-                    <LoadingIcon />
-                )}
-            </div>
+                    </Button>
+                </div>
+            )}
+            {isFormSubmitted && (
+                // loading icon
+                <LoadingIcon />
+            )}
         </form>
     )
 }

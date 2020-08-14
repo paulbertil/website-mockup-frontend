@@ -1,5 +1,4 @@
-# Node & Express API for a url to mockup image application
-
+# Mockshow - Create a high quality mockup of your website or web app
 To showcase my projects, i previously used an app called screenpeek. One day, the app went offline and i went to search for competitors that i could use and found none that does not require manual work.
 
 
